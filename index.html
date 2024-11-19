@@ -7,7 +7,16 @@
 
   gtag('config', 'G-G2B9XJ1MGZ');
 </script>
-<script src=
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0" />
+
+    <script src=
 "https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js">
     </script>
 
@@ -16,44 +25,28 @@
     </script>
     
     <script src="form.js"></script>
-<form action="action_page.php">
-  <div class="container">
-    <h2>Subscribe to our Newsletter</h2>
-    <p>Lorem ipsum..</p>
-  </div>
+    <title>Newsletter Test</title>
+</head>
 
-  <div class="container" style="background-color:white">
-    <input type="text" placeholder="Name" name="name" required>
-    <input type="text" placeholder="Email address" name="mail" required>
-    <label>
-      <input type="checkbox" checked="checked" name="subscribe"> Daily Newsletter
-    </label>
-  </div>
+<body>
+    <div class="formContainer">
+        <h1>Newsletter Signup:</h1>
+        <input type="email" 
+            placeholder="email here" id="email" />
+        <br />
+        <input type="password" 
+            placeholder="password here" id="password" />
+        <br />
+        <button onclick="signUp()" id="signUp">
+            SignUp
+        </button>
+       <!--  <button onclick="signIn()" id="signIp">
+            SignIn
+        </button>
+        <button onclick="signOut()" id="signOut">
+            SignOut
+        </button> -->
+    </div>
+</body>
 
-  <div class="container">
-    <input type="submit" value="Subscribe">
-  </div>
-  <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyDc-4WWrli_R_v1prnPLJWN1pBn4Bk7UqU",
-    authDomain: "easleytest-599cb.firebaseapp.com",
-    projectId: "easleytest-599cb",
-    storageBucket: "easleytest-599cb.firebasestorage.app",
-    messagingSenderId: "543089512702",
-    appId: "1:543089512702:web:c7858a831af12bae0195af",
-    measurementId: "G-3Q23ZQHB4C"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
-</form>
+</html>
