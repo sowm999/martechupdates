@@ -1,63 +1,39 @@
-<html>
-    <head>
-        <title>Firebase_form</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="box">
-            <div class="form">
-                <h2>Login Form</h2>
-                <form>
-                    <div class="inputbox">
-                        <input type="text" value="" id="username" required>
-                        <span>username</span>
-                    </div>
-                    <div class="inputbox">
-                        <input type="email" value="" id="email" required>
-                        <span>E-mail</span>
-                    </div>
-                    <div class="inputbox">
-                        <input type="text" value="" id="phone" required>
-                        <span>Phone Number</span>
-                    </div>
-                    <input type="submit" value="submit" class="sub" id="submit">
-                </form>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Messages | Firebase</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <form action="" id="contactForm">
+            <div class="alert">Your message sent</div>
+
+            <div class="inputBox">
+                <input type="text" id="name" placeholder="Your name...." />
             </div>
-        </div>
-        <script type="module">
-               // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-            import {getDatabase, ref, set, get, child} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 
-              // Your web app's Firebase configuration
-              const firebaseConfig = {
-                apiKey: "AIzaSyCZyzZxhXJSbGNRocQlg0k-Jf-3pY9R8qc",
-                authDomain: "htmltest-453ae.firebaseapp.com",
-                databaseURL: "https://htmltest-453ae-default-rtdb.firebaseio.com",
-                projectId: "htmltest-453ae",
-                storageBucket: "htmltest-453ae.firebasestorage.app",
-                messagingSenderId: "782580127781",
-                appId: "1:782580127781:web:82a0be6d30b59837c507cc"
-              };
+            <div class="inputBox">
+                <input type="email" id="emailid" placeholder="Your Email....." />
+            </div>
 
-  // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
+            <div class="inputBox">
+                <textarea id="msgContent" cols="30" rows="10" placeholder="Message"></textarea>
+            </div>
 
-   //get ref to database services
-             const db = getDatabase(app);
+            <div class="inputBox">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
 
-             document.getElementById("submit").addEventListener('click', function(e){
-              e.preventDefault();
-              set(ref(db, 'user/' + document.getElementById("username").value),
-              {
-   
-                username: document.getElementById("username").value,
-                email: document.getElementById("email").value,
-                PhoneNumber: document.getElementById("phone").value
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="./mail.js"></script>
+</body>
 
-              });
-                alert("Login Sucessfull  !");
-             })
-        </script>
-    </body>
 </html>
